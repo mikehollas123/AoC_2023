@@ -1,11 +1,8 @@
 
 pub fn process(input : &str) -> String {
-
     let mut total_predicted = 0;
-    let mut pre = vec![];
 
     for line in input.lines(){
-
         let data: Vec<_> = line.trim().split(" ").map(|x| x.parse::<i64>().unwrap()).collect();
         println!("{:?}",data);
         let mut last_diff = vec![];
@@ -28,21 +25,15 @@ pub fn process(input : &str) -> String {
         println!("{:?}", predicted);
 
         total_predicted += predicted;
-
-        pre.push(predicted);
     }
     //println!("{}",pre.iter().sum::<i64>());
-
     return format!("{}",total_predicted);
 }
 
 fn get_diffs(data: &Vec<i64>)-> Vec<i64>{
-
     let mut diffs = vec![];
     for i in 0..data.len()-1{
         diffs.push(data[i+1] - data[i]);
     }
-
     diffs
 }
-
