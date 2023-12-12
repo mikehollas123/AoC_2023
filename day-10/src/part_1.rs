@@ -1,5 +1,4 @@
 pub fn process(input : &str) -> String {
-
     let map: Vec<_> = input.lines().map(|x| x.chars().collect::<Vec<_>>()).collect();
 
     // find S
@@ -9,7 +8,6 @@ pub fn process(input : &str) -> String {
         for j in 0..map[i].len(){
             if map[i][j] == 'S'{
                 start = (i,j);
-
             }
         }
     }
@@ -28,8 +26,6 @@ pub fn process(input : &str) -> String {
 }
 
 fn find_next_way(pos : (usize,usize), previous: (usize,usize),  map: &Vec<Vec<char>>) -> ((usize,usize),(usize,usize)){
-
-
     let out = match map[pos.0][pos.1] {
         'L' => { ((pos.0-1,pos.1),(pos.0,pos.1+1))},
         '7' => {((pos.0,pos.1-1),(pos.0+1,pos.1))},
@@ -47,5 +43,4 @@ fn find_next_way(pos : (usize,usize), previous: (usize,usize),  map: &Vec<Vec<ch
         return (out.1, pos);
     }
     else { panic!("I can't go back!") }
-
 }

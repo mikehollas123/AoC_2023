@@ -8,4 +8,3 @@ fn main() {
     let result2 = part_2::process(include_str!("input.txt"));
     print!("day-01 part2: {}\n",result2);
 }
-
